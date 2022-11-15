@@ -1,0 +1,36 @@
+appName: Counter
+counter: Counter
+counters: Counters
+about: About
+settings: Settings
+addCounter: Add counter
+newCounter: New counter
+editCounter: Edit counter
+incrementBy: Increment by {}
+decrementBy: Decrement by {}
+actions: Actions
+edit: Edit
+reset: Reset
+delete: Delete
+yes: Yes
+undo: Undo
+deleted: "{} deleted"
+wasReset: "{} was reset"
+name: Name
+requiredField: Please fill in this field
+currentCount: Current count
+initialCount: Initial count
+incrementAmount: Increment/decrement by
+mustBePositive: Must be greater than 0
+errorLoadingCounters: Error loading counters!
+canDragCounters: "Tip: drag the counters to reorder them"
+prefs:
+  appearance: Appearance
+  theme: Theme
+  system: System
+  light: Light
+  dark: Dark
+  region: Region
+  language: Language
+  colorScheme: Color scheme
+  compactMode: Compact mode

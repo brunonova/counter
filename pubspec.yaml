@@ -112,4 +112,4 @@ flutter:
 flutter_native_splash:
   color: "#fafafa"
   color_dark: "#303030"
-  image: android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+  image: assets/images/splash_image.png

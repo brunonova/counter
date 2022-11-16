@@ -75,6 +75,9 @@ class MyApp extends StatelessWidget {
           snackBarTheme: SnackBarThemeData(
             actionTextColor: lightColorScheme.primaryContainer,
           ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+          ),
         ),
         darkTheme: ThemeData(
           useMaterial3: true,
@@ -87,6 +90,9 @@ class MyApp extends StatelessWidget {
           ),
           snackBarTheme: SnackBarThemeData(
             actionTextColor: darkColorScheme.primaryContainer,
+          ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
           ),
         ),
         routerConfig: _router,

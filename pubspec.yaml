@@ -42,7 +42,7 @@ dependencies:
     #path: ../flutter_common
     git:
       url: https://github.com/brunonova/flutter_common.git
-      ref: v1.1.1
+      ref: v1.2.0
   easy_localization: ^3.0.1
   easy_localization_loader: ^1.0.1+1
   shared_preferences: ^2.0.15

@@ -12,6 +12,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+import 'package:flutter/services.dart';
 import 'package:flutter_common/material.dart';
 import 'package:window_size/window_size.dart';
 
@@ -65,20 +66,20 @@ class MyApp extends StatelessWidget {
         themeMode: themePrefs.themeMode,
         scrollBehavior: CommonScrollBehavior(),
         theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: lightColorScheme,
-          scrollbarTheme: buildCommonScrollbarTheme(context),
-          cardTheme: CardTheme(
-            elevation: 2,
-            color: lightColorScheme.surface,
-          ),
-          snackBarTheme: SnackBarThemeData(
-            actionTextColor: lightColorScheme.primaryContainer,
-          ),
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
-          ),
-        ),
+            useMaterial3: true,
+            colorScheme: lightColorScheme,
+            scrollbarTheme: buildCommonScrollbarTheme(context),
+            cardTheme: CardTheme(
+              elevation: 2,
+              color: lightColorScheme.surface,
+            ),
+            snackBarTheme: SnackBarThemeData(
+              actionTextColor: lightColorScheme.primaryContainer,
+            ),
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.transparent,
+              systemOverlayStyle: SystemUiOverlayStyle.dark,
+            )),
         darkTheme: ThemeData(
           useMaterial3: true,
           brightness: Brightness.dark,
@@ -93,6 +94,7 @@ class MyApp extends StatelessWidget {
           ),
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.transparent,
+            systemOverlayStyle: SystemUiOverlayStyle.light,
           ),
         ),
         routerConfig: _router,

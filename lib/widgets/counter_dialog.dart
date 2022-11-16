@@ -70,6 +70,9 @@ class _CounterDialogState extends State<CounterDialog> {
       title: Text(isNewCounter ? "newCounter" : "editCounter").tr(),
       scrollable: true,
       insetPadding: CommonConstants.dialogInsetPadding,
+      titlePadding: CommonConstants.dialogTitlePadding,
+      actionsPadding: CommonConstants.dialogActionsPadding,
+      contentPadding: CommonConstants.dialogContentPadding,
       content: Form(
         key: _formKey,
         child: Column(

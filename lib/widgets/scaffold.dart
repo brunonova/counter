@@ -22,7 +22,7 @@ class AppScaffold extends StatelessWidget {
   AppScaffold({
     super.key,
     this.title,
-    this.titleColor = Colors.white,
+    this.titleColor,
     required this.body,
     this.appBar,
     this.floatingActionButton,
@@ -34,7 +34,7 @@ class AppScaffold extends StatelessWidget {
   final String? title;
 
   /// Color for the [Title] widget, if the [title] argument is given.
-  final Color titleColor;
+  final Color? titleColor;
 
   /// Body of the page.
   final Widget body;

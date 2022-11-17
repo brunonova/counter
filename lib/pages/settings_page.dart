@@ -47,6 +47,7 @@ class SettingsPage extends StatelessWidget {
                   ),
                   value: Text("prefs.${themePrefs.themeMode.name}").tr(),
                   dialogTitle: "prefs.theme".tr(),
+                  showCloseButton: true,
                   buildChoices: () => {
                     "prefs.system".tr(): ThemeMode.system,
                     "prefs.light".tr(): ThemeMode.light,
@@ -60,6 +61,7 @@ class SettingsPage extends StatelessWidget {
                   leading: const Icon(Icons.palette),
                   value: Text("color.${themePrefs.colorSchemeName}").tr(),
                   dialogTitle: "prefs.colorScheme".tr(),
+                  showCloseButton: true,
                   buildChoices: () => ThemePrefs.colorSchemeChoices,
                   onChosen: (choice) => themePrefs.colorSchemeName = choice,
                   displayColorNames: true,
@@ -81,6 +83,7 @@ class SettingsPage extends StatelessWidget {
                   title: const Text("prefs.language").tr(),
                   leading: const Icon(Icons.language),
                   dialogTitle: "prefs.language".tr(),
+                  showCloseButton: true,
                   onChosen: (choice) =>
                       EasyLocalization.of(context)?.setLocale(choice),
                 ),

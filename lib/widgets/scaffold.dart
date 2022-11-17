@@ -78,7 +78,10 @@ class AppScaffold extends StatelessWidget {
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation,
       destinations: _destinations,
-      drawerHeader: AppDrawerHeader(appName: "appName".tr()),
+      drawerHeader: AppDrawerHeader(
+        title: "appName".tr(),
+        height: 120,
+      ),
     );
   }
 }

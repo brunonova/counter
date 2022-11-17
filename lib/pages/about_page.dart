@@ -29,7 +29,12 @@ class AboutPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("about").tr(),
       ),
-      body: const AboutInfo(authors: ["Bruno Nova"]),
+      body: AboutInfo(
+        appName: "appName".tr(),
+        authors: const ["Bruno Nova"],
+        appIconAssetPath: "assets/images/app_icon.png",
+        licenseAssetPath: "assets/license.txt",
+      ),
     );
   }
 }

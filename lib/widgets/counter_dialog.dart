@@ -67,66 +67,71 @@ class _CounterDialogState extends State<CounterDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(isNewCounter ? "newCounter" : "editCounter").tr(),
-      scrollable: true,
+      // Hide the title when the screen is short (like a phone on landscape)
+      title: context.mediaQuery.size.height > 300
+          ? Text(isNewCounter ? "newCounter" : "editCounter").tr()
+          : null,
       insetPadding: CommonConstants.dialogInsetPadding,
       titlePadding: CommonConstants.dialogTitlePadding,
       actionsPadding: CommonConstants.dialogActionsPadding,
-      contentPadding: CommonConstants.dialogContentPadding,
-      content: Form(
-        key: _formKey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Counter name
-            TextFormField(
-              controller: _nameController,
-              decoration: InputDecoration(labelText: "name".tr()),
-              onFieldSubmitted: (_) => _save(),
-              autofocus: true,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "requiredField".tr();
-                }
-                return null;
-              },
-            ),
-            // Initial/current count
-            TextFormField(
-              controller: _countController,
-              decoration: InputDecoration(
-                  labelText:
-                      tr(isNewCounter ? "initialCount" : "currentCount")),
-              onFieldSubmitted: (_) => _save(),
-              textAlign: TextAlign.right,
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "requiredField".tr();
-                }
-                return null;
-              },
-            ),
-            // Increment amount
-            TextFormField(
-              controller: _incrementAmountController,
-              decoration: InputDecoration(labelText: "incrementAmount".tr()),
-              onFieldSubmitted: (_) => _save(),
-              textAlign: TextAlign.right,
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "requiredField".tr();
-                }
-                if (int.parse(value) <= 0) {
-                  return "mustBePositive".tr();
-                }
-                return null;
-              },
-            ),
-          ],
+      contentPadding: CommonConstants.dialogContentPaddingWithScroll,
+      content: SingleChildScrollView(
+        padding: CommonConstants.dialogContentScrollPadding,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Counter name
+              TextFormField(
+                controller: _nameController,
+                decoration: InputDecoration(labelText: "name".tr()),
+                onFieldSubmitted: (_) => _save(),
+                autofocus: true,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "requiredField".tr();
+                  }
+                  return null;
+                },
+              ),
+              // Initial/current count
+              TextFormField(
+                controller: _countController,
+                decoration: InputDecoration(
+                    labelText:
+                        tr(isNewCounter ? "initialCount" : "currentCount")),
+                onFieldSubmitted: (_) => _save(),
+                textAlign: TextAlign.right,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "requiredField".tr();
+                  }
+                  return null;
+                },
+              ),
+              // Increment amount
+              TextFormField(
+                controller: _incrementAmountController,
+                decoration: InputDecoration(labelText: "incrementAmount".tr()),
+                onFieldSubmitted: (_) => _save(),
+                textAlign: TextAlign.right,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "requiredField".tr();
+                  }
+                  if (int.parse(value) <= 0) {
+                    return "mustBePositive".tr();
+                  }
+                  return null;
+                },
+              ),
+            ],
+          ),
         ),
       ),
       actions: [

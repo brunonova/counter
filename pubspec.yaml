@@ -42,7 +42,7 @@ dependencies:
     #path: ../flutter_common
     git:
       url: https://github.com/brunonova/flutter_common.git
-      ref: v1.2.3
+      ref: v1.3.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding.git

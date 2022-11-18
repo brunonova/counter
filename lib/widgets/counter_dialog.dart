@@ -68,10 +68,12 @@ class _CounterDialogState extends State<CounterDialog> {
   Widget build(BuildContext context) {
     return AlertDialog(
       // Hide the title when the screen is short (like a phone on landscape)
-      title: context.mediaQuery.size.height > 300
+      title: (context.mediaQuery.size.height -
+                  context.mediaQuery.viewInsets.bottom) >
+              300
           ? Text(isNewCounter ? "newCounter" : "editCounter").tr()
           : null,
-      insetPadding: CommonConstants.dialogInsetPadding,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       titlePadding: CommonConstants.dialogTitlePadding,
       actionsPadding: CommonConstants.dialogActionsPadding,
       contentPadding: CommonConstants.dialogContentPaddingWithScroll,
@@ -149,9 +151,10 @@ class _CounterDialogState extends State<CounterDialog> {
 
   void _save() {
     if (_formKey.currentState!.validate()) {
-      counter.name = _nameController.text;
-      counter.count = int.parse(_countController.text);
-      counter.incrementAmount = int.parse(_incrementAmountController.text);
+      counter.name = _nameController.text.trim();
+      counter.count = int.parse(_countController.text.trim());
+      counter.incrementAmount =
+          int.parse(_incrementAmountController.text.trim());
       context.navigator.pop(counter);
     }
   }

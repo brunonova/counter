@@ -80,7 +80,8 @@ class AppScaffold extends StatelessWidget {
       destinations: _destinations,
       drawerHeader: AppDrawerHeader(
         title: "appName".tr(),
-        height: 120,
+        height: 96,
+        gradientBackground: true,
       ),
     );
   }

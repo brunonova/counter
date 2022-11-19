@@ -57,12 +57,15 @@ class ThemePrefs extends ChangeNotifier {
     "lightGreen": Colors.lightGreen,
     "green": Colors.green,
     "teal": Colors.teal,
+    "cyan": Colors.cyan,
     "blue": Colors.blue,
+    "indigo": Colors.indigo,
     "deepPurple": Colors.deepPurple,
     "purple": Colors.purple,
     "pink": Colors.pink,
     "red": Colors.red,
     "orange": Colors.orange,
     "yellow": Colors.yellow,
+    "lime": Colors.lime,
   };
 }

@@ -33,12 +33,12 @@ class SettingsPage extends StatelessWidget {
         ),
         body: SettingsList(
           padLeft: true,
+          showCloseButtonOnDialogs: true,
           sections: [
             SettingsSection(
               title: const Text("prefs.appearance").tr(),
-              options: [
-                SettingsTile.choice(
-                  context: context,
+              tiles: [
+                ChoiceSettingsTile<ThemeMode>(
                   title: const Text("prefs.theme").tr(),
                   leading: Icon(
                     context.theme.brightness == Brightness.light
@@ -47,7 +47,6 @@ class SettingsPage extends StatelessWidget {
                   ),
                   value: Text("prefs.${themePrefs.themeMode.name}").tr(),
                   dialogTitle: "prefs.theme".tr(),
-                  showCloseButton: true,
                   buildChoices: () => {
                     "prefs.system".tr(): ThemeMode.system,
                     "prefs.light".tr(): ThemeMode.light,
@@ -55,18 +54,16 @@ class SettingsPage extends StatelessWidget {
                   },
                   onChosen: (choice) => themePrefs.themeMode = choice,
                 ),
-                SettingsTile.colorSchemeChoice(
-                  context: context,
+                ColorSchemeChoiceSettingsTile(
                   title: const Text("prefs.colorScheme").tr(),
                   leading: const Icon(Icons.palette),
                   value: Text("color.${themePrefs.colorSchemeName}").tr(),
                   dialogTitle: "prefs.colorScheme".tr(),
-                  showCloseButton: true,
                   buildChoices: () => ThemePrefs.colorSchemeChoices,
                   onChosen: (choice) => themePrefs.colorSchemeName = choice,
                   displayColorNames: true,
                 ),
-                SettingsTile.toggle(
+                SwitchSettingsTile(
                   title: const Text("prefs.compactMode").tr(),
                   leading: const Icon(Icons.table_rows),
                   toggled: themePrefs.compactMode,
@@ -77,13 +74,11 @@ class SettingsPage extends StatelessWidget {
             ),
             SettingsSection(
               title: const Text("prefs.region").tr(),
-              options: [
-                SettingsTile.localeChoice(
-                  context: context,
+              tiles: [
+                LocaleChoiceSettingsTile(
                   title: const Text("prefs.language").tr(),
                   leading: const Icon(Icons.language),
                   dialogTitle: "prefs.language".tr(),
-                  showCloseButton: true,
                   onChosen: (choice) =>
                       EasyLocalization.of(context)?.setLocale(choice),
                 ),

@@ -12,9 +12,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
-import 'package:flutter/services.dart';
 import 'package:flutter_common/material.dart';
-import 'package:window_size/window_size.dart';
 
 import 'pages/about_page.dart';
 import 'pages/counter_page.dart';
@@ -30,77 +28,6 @@ void main() {
     ],
     builder: () => const MyApp(),
   );
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<ThemePrefs>(builder: (context, themePrefs, _) {
-      // Light color scheme
-      final lightColorScheme = ColorScheme.fromSeed(
-        brightness: Brightness.light,
-        seedColor: themePrefs.colorScheme,
-      );
-
-      // Dark color scheme
-      final darkColorScheme = ColorScheme.fromSeed(
-        brightness: Brightness.dark,
-        seedColor: themePrefs.colorScheme,
-      );
-
-      // Build the MaterialApp
-      return MaterialApp.router(
-        onGenerateTitle: (context) {
-          final title = "appName".tr();
-          // Set window title on desktop platforms
-          if (PlatformUtils.isDesktop) {
-            setWindowTitle(title);
-          }
-          return title;
-        },
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        themeMode: themePrefs.themeMode,
-        scrollBehavior: CommonScrollBehavior(),
-        theme: ThemeData(
-            useMaterial3: true,
-            colorScheme: lightColorScheme,
-            scrollbarTheme: buildCommonScrollbarTheme(context),
-            cardTheme: CardTheme(
-              elevation: 2,
-              color: lightColorScheme.surface,
-            ),
-            snackBarTheme: SnackBarThemeData(
-              actionTextColor: lightColorScheme.primaryContainer,
-            ),
-            appBarTheme: const AppBarTheme(
-              backgroundColor: Colors.transparent,
-              systemOverlayStyle: SystemUiOverlayStyle.dark,
-            )),
-        darkTheme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          colorScheme: darkColorScheme,
-          scrollbarTheme: buildCommonScrollbarTheme(context),
-          cardTheme: CardTheme(
-            elevation: 2,
-            color: darkColorScheme.surfaceVariant,
-          ),
-          snackBarTheme: SnackBarThemeData(
-            actionTextColor: darkColorScheme.primaryContainer,
-          ),
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-          ),
-        ),
-        routerConfig: _router,
-      );
-    });
-  }
 }
 
 /// Router for navigation.
@@ -124,3 +51,29 @@ final _router = GoRouter(
   ],
   errorBuilder: (context, state) => ErrorPage(state: state),
 );
+
+/// The application.
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<ThemePrefs>(
+      builder: (context, themePrefs, _) => CommonMaterialApp(
+        appNameStringKey: "appName",
+        seedColor: themePrefs.colorScheme,
+        routerConfig: _router,
+        themeMode: themePrefs.themeMode,
+        buildTheme: (context, colorScheme, lightTheme) => CommonTheme.themeData(
+          context: context,
+          colorScheme: colorScheme,
+          cardTheme: CardTheme(
+            elevation: 2,
+            color:
+                lightTheme ? colorScheme.surface : colorScheme.surfaceVariant,
+          ),
+        ),
+      ),
+    );
+  }
+}

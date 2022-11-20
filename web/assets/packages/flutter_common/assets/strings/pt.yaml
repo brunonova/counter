@@ -1,0 +1,31 @@
+ok: OK
+cancel: Cancelar
+color:
+  amber: Âmbar
+  black: Preto
+  blue: Azul
+  blueGrey: Azul acinzentado
+  brown: Castanho
+  cyan: Ciano
+  deepOrange: Laranja profundo
+  deepPurple: Roxo profundo
+  green: Verde
+  grey: Cinzento
+  indigo: Índigo
+  lightBlue: Azul claro
+  lightGreen: Verde claro
+  lime: Lima
+  orange: Laranja
+  pink: Rosa
+  purple: Roxo
+  red: Vermelho
+  teal: Verde azulado
+  white: Branco
+  yellow: Amarelo
+aboutInfo:
+  version: Versão
+  developed_by: Desenvolvido por
+  license: Licença
+notFound:
+  title: Página não encontrada!
+  return: Voltar à página inicial

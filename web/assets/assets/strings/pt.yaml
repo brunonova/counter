@@ -1,0 +1,36 @@
+appName: Contador
+counter: Contador
+counters: Contadores
+about: Sobre
+settings: Definições
+addCounter: Adicionar contador
+newCounter: Novo contador
+editCounter: Editar contador
+incrementBy: Incrementar {}
+decrementBy: Decrementar {}
+actions: Acções
+edit: Editar
+reset: Reiniciar
+delete: Apagar
+yes: Sim
+undo: Reverter
+deleted: "{} apagado"
+wasReset: "{} reiniciado"
+name: Nome
+requiredField: Por favor preencha este campo
+currentCount: Contagem atual
+initialCount: Contagem inicial
+incrementAmount: Incrementar/decrementar em
+mustBePositive: Tem de ser maior do que 0
+errorLoadingCounters: Erro a carregar os contadores!
+canDragCounters: "Dica: arraste os contadores para os reordenar"
+prefs:
+  appearance: Aparência
+  theme: Tema
+  system: Sistema
+  light: Claro
+  dark: Escuro
+  region: Região
+  language: Idioma
+  colorScheme: Esquema de cores
+  compactMode: Modo compacto

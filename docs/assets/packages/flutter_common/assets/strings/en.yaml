@@ -1,0 +1,31 @@
+ok: OK
+cancel: Cancel
+color:
+  amber: Amber
+  black: Black
+  blue: Blue
+  blueGrey: Blue grey
+  brown: Brown
+  cyan: Cyan
+  deepOrange: Deep orange
+  deepPurple: Deep purple
+  green: Green
+  grey: Grey
+  indigo: Indigo
+  lightBlue: Light blue
+  lightGreen: Light green
+  lime: Lime
+  orange: Orange
+  pink: Pink
+  purple: Purple
+  red: Red
+  teal: Teal
+  white: White
+  yellow: Yellow
+aboutInfo:
+  version: Version
+  developed_by: Deveolped by
+  license: License
+notFound:
+  title: Page not found!
+  return: Return to home page

@@ -31,6 +31,7 @@ void main() {
 }
 
 /// Router for navigation.
+///
 /// Declared outside so that hot reload doesn't reset to the home page.
 /// Modifying the router will require a restart, however!
 final _router = GoRouter(

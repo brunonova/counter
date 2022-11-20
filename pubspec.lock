@@ -185,11 +185,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v1.4.0"
-      resolved-ref: "03dcbb2c9b9a85787e7473771b250e58e43db3b1"
+      ref: "v1.4.1"
+      resolved-ref: "7c3091571c1ebde2e5a83e7b2b229823487a3f71"
       url: "https://github.com/brunonova/flutter_common.git"
     source: git
-    version: "1.4.0"
+    version: "1.4.1"
   flutter_lints:
     dependency: "direct dev"
     description:

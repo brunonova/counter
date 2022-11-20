@@ -42,7 +42,7 @@ dependencies:
     #path: ../flutter_common
     git:
       url: https://github.com/brunonova/flutter_common.git
-      ref: v1.4.0
+      ref: v1.4.1
 
 dev_dependencies:
   flutter_test:

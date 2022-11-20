@@ -13,9 +13,9 @@ The web version is available at <https://brunonova.github.io/counter/>.
 
 ## Screenshots
 
-![Windows screenshot](screenshots/Windows.png)
+<img src="screenshots/Windows.png" alt="Windows screenshot" width="800" />
 
-![Android screenshot](screenshots/Android.png)
+<img src="screenshots/Android.png" alt="Android screenshot" width="300" />
 
 
 [releases]: https://github.com/brunonova/counter/releases/latest "Releases page"

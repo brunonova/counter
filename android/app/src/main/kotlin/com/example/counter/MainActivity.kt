@@ -1,4 +1,4 @@
-package pt.brunonova.counter
+package brunonova.counter
 
 import io.flutter.embedding.android.FlutterActivity
 

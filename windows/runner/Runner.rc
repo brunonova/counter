@@ -89,7 +89,7 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "pt.brunonova" "\0"
+            VALUE "CompanyName", "brunonova" "\0"
             VALUE "FileDescription", "counter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "counter" "\0"

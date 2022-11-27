@@ -1,3 +1,2 @@
 # Ignore docs folder in language statisticts
-docs/* linguist-documentation
-*.js -linguist-detectable
+docs/* linguist-detectable

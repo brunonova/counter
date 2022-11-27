@@ -1,0 +1,32 @@
+name: counter-brunonova
+base: core18
+version: '1.0.0'
+title: Counter
+summary: A simple counter
+description: |
+  A simple counter, for Windows, Linux, Android and the Web.
+  Built with Flutter.
+icon: snap/gui/counter-brunonova.png
+license: GPL-3.0+
+contact: https://github.com/brunonova/counter
+issues: https://github.com/brunonova/counter/issues
+source-code: https://github.com/brunonova/counter
+
+grade: stable
+confinement: strict
+compression: lzo
+architectures:
+  - build-on: amd64
+    run-on: amd64
+  - build-on: arm64
+    run-on: arm64
+
+parts:
+  counter:
+    plugin: flutter
+    source: .
+
+apps:
+  counter-brunonova:
+    command: counter
+    extensions: [flutter-stable]

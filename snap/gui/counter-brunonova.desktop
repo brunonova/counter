@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Counter
+Name[pt]=Contador
+GenericName=Counter
+GenericName[pt]=Contador
+Comment=A simple counter
+Comment[pt]=Um contador simples
+Type=Application
+Exec=counter-brunonova %U
+Icon=${SNAP}/meta/gui/counter-brunonova.png
+Terminal=false
+Categories=Utility;

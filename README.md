@@ -7,6 +7,7 @@ Built with Flutter.
 ## Download
 
 To download the application for Windows, Linux or Android, go to the [Releases page][releases].
+For Linux there's also a [snap available][snap].
 
 The web version is available at <https://brunonova.github.io/counter/>.
 
@@ -19,3 +20,4 @@ The web version is available at <https://brunonova.github.io/counter/>.
 
 
 [releases]: https://github.com/brunonova/counter/releases/latest "Releases page"
+[snap]: https://snapcraft.io/counter-brunonova "Snap"
